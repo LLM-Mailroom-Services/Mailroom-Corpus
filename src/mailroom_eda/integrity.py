@@ -1,6 +1,8 @@
 """P1 — structural integrity & provenance audit (full, no sampling)."""
 from __future__ import annotations
 
+import logging
+
 import json
 from collections import Counter
 
@@ -190,8 +192,14 @@ def audit_maud_labels(blind: pd.DataFrame, gt: pd.DataFrame) -> dict:
             try:
                 if int(float(str(cat_sum))) == int(float(str(mc))) and int(float(str(mc))) >= len(labels):
                     meta_counts_ok += 1
-            except Exception:
-                pass
+            except Exception as exc:
+                logging.getLogger(__name__).warning(
+                    "MAUD meta-count comparison skipped for row %s (cat_sum=%r mc=%r): %s",
+                    i,
+                    cat_sum,
+                    mc,
+                    exc,
+                )
     return {
         "rows_with_labels": n,
         "distinct_tasks": len(task_counts),

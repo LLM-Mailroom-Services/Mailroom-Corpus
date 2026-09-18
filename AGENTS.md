@@ -10,9 +10,24 @@ standalone successor of the frozen v8 `mailroom-corpus` baseline (2,000 rows,
 
 Mirror of the standalone `Exios66/Mailroom-Corpus-EDA` repo; in the monorepo
 it lives at `packages/mailroom-corpus-eda` as a virtual uv member (no build).
-Never edit it from both places in one session — develop here, sync via
-`scripts/sync_packages.py` in the org monorepo
-(`LLM-Mailroom-Services/Digital-Mailroom`).
+
+## Monorepo development & sync (Digital-Mailroom)
+
+- **Dev source of truth**: the monorepo
+  (`LLM-Mailroom-Services/Digital-Mailroom`) is where active development
+  happens; this package is the subtree mirror of `Exios66/Mailroom-Corpus-EDA`.
+- **Sync contract**: never edit the mirror from both places in one session.
+  Changes flow ONE way at a time through `scripts/sync_packages.py`
+  (monorepo root): `pull --squash` imports standalone work monorepo-ward,
+  `push` (content-only) / `push --all --patch` (release-train sweep)
+  publishes monorepo deltas upstream, `snapshot` re-baselines the cursor.
+  Never hand-edit the mirror and never push to the standalone repo
+  directly.
+- **Releases**: this package ships upstream (`Exios66/Mailroom-Corpus-EDA`)
+  as a standalone repo; its corpus releases (e.g. `mailroom-dataset` v9)
+  are published via the centralized HF helpers below and propagated
+  monorepo-ward by the sync pass. Full law: root `AGENTS.md` §Sub-package
+  sync + `docs/wiki/Sub-Package-Sync.md` + `docs/wiki/Releases.md`.
 
 ## Layout
 

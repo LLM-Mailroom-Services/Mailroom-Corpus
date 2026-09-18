@@ -11,7 +11,7 @@
 ## Layout
 
 | Directory | Purpose |
-|:---|:---|
+| :--- | :--- |
 | [`build/`](build/) | Corpus build + publish (v9 `mailroom-dataset`) |
 | [`publish/`](publish/) | Hub publish/verify helpers |
 | [`audit/`](audit/) | Corpus audit & expansion-planning instruments |
@@ -25,7 +25,7 @@
 ## Live scripts
 
 | Script | Purpose |
-|:---|:---|
+| :--- | :--- |
 | [`build/build_v9.py`](build/build_v9.py) | Build (and optionally publish) the v9 `mailroom-dataset` (stage-only by default; `--publish` uploads via `mailroom_eda.hf_interface`) |
 | [`publish/verify_hf.py`](publish/verify_hf.py) | Byte-verify a local export against the Hub; list repo files |
 | [`audit/baseline_audit.py`](audit/baseline_audit.py) | §4 / §85 P0 baseline audit → `docs/reports/audits/` |
@@ -38,7 +38,7 @@
 ## Archived scripts
 
 | Script | Purpose | Status |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | [`archive/v8/`](archive/v8/) | `build_v8.py`, `publish_hardened.py`, `reconcile_gt_v8.py`, `publish_docclass.py`, `export_docclass.py` | Frozen `mailroom-corpus` (v8) tooling — lineage only |
 | [`archive/v9-acquisition/`](archive/v9-acquisition/) | `edgar_pull.py`, `edgar_ftsearch.py`, `draw_contract_v9.py` | One-time v9 sourcing — provenance only |
 

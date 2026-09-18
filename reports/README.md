@@ -11,7 +11,7 @@
 ## Structure
 
 | Path | Contents |
-|:---|:---|
+| :--- | :--- |
 | [`figures/`](figures/) | Static PNG charts |
 | [`figures_interactive/`](figures_interactive/) | Interactive Plotly HTML charts |
 | [`tables/`](tables/) | Generated tables |
@@ -19,6 +19,7 @@
 ## Viewing Reports
 
 Open any HTML file in a browser:
+
 ```bash
 open reports/figures_interactive/*.html
 ```
