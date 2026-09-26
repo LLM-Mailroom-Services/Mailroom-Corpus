@@ -80,6 +80,12 @@ the `ground_truth` config, keyed 1:1 on `filename`. See the
 [live dataset card](https://huggingface.co/datasets/Lucius-Morningstar/mailroom-dataset)
 for the full row shape and config contract.
 
+## Plans
+
+| Plan | Scope |
+|---|---|
+| [v9.1 data-quality HF revision](plans/v9.1-data-quality-hf-revision.md) | Evidence-based Hub revision on the 3,302-row v9 tip — Modal insights, LLM-ingestion formatting, EX-10 close-out, eval floors (tracked as [mailroom-issues#196](https://github.com/LLM-Mailroom-Services/mailroom-issues/issues/196)) |
+
 ## Related family repos
 
 The family is cataloged in the public
